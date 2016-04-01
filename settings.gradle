@@ -1,0 +1,3 @@
+rootProject.name = 'spring-example'
+
+include 'spring-rest-example'
