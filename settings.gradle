@@ -1,3 +1,4 @@
 rootProject.name = 'spring-example'
 
 include 'spring-rest-example'
+include 'spring-consuming-rest'

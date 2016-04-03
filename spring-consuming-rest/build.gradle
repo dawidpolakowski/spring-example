@@ -1,0 +1,46 @@
+//build script
+buildscript{
+	//repositories maven center
+	repositories{
+		mavenCentral()
+	}
+	//maven dependencies plugin
+	dependencies{
+		classpath("org.springframework.boot:spring-boot-gradle-plugin:1.3.3.RELEASE")
+	}
+}
+
+//apply plugin eg:java spring-boot eclipse idea ...
+apply plugin:'java'
+apply plugin:'eclipse'
+apply plugin:'spring-boot'
+
+//package jar
+jar{
+	baseName='spring-consuming-rest'
+	version='1.0'
+}
+
+//repositories maven center
+repositories{
+	mavenCentral()
+}
+
+//jdk version
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+//maven dependencies jar
+dependencies{
+	//compile scope jar
+	compile("org.springframework.boot:spring-boot-starter")
+	compile("org.springframework:spring-web")
+	compile("com.fasterxml.jackson.core:jackson-databind")
+	//test compile scope jar
+	testCompile("junit:junit")
+}
+
+//wrapper task
+task wrapper(type:Wrapper){
+	gradleVersion = 2.3
+}
