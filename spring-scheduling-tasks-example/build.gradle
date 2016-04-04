@@ -1,0 +1,39 @@
+buildscript{
+	repositories{
+		mavenCentral()
+	}
+	dependencies{
+		classpath("org.springframework.boot:spring-boot-gradle-plugin:1.3.3.RELEASE")
+	}
+}
+
+//plugin
+apply plugin:'java'
+apply plugin:'eclipse'
+apply plugin:'spring-boot'
+
+//create jar build/libs/..
+jar{
+	baseName='spring-scheduling-tasks-example'
+	version=1.0
+}
+
+//maven
+repositories{
+	mavenCentral()
+}
+
+//jdk version
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+dependencies{
+	//compile jar
+	compile("org.springframework.boot:spring-boot-starter")
+	//test jar
+	testCompile("junit:junit")
+}
+
+task wrapper(type:Wrapper){
+	gradleVersion = 2.3
+}
